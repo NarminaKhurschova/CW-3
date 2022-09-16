@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--Форма поиска-->
 <html lang="ru">
 
 <head>
@@ -34,14 +35,14 @@
      <section class="items">
         <div class="items__item item">
           <div class="item__top">
-            <a href="user-feed.html" class="item__head">
+            <a href="/users/{{post.poster_name}}" class="item__head">
               <div class="item__ava-wrap">
                 <img src="{{post.poster_avatar}}" alt="" class="item__ava" width="47">
               </div>
               <span class="item__username">{{post.poster_name|title}}</span>
             </a>
           </div>
-          <a href="post.html" class="item__post-link">
+          <a href="/posts/{{post.pk}}" class="item__post-link">
             <img src="{{post.pic}}" alt="" width="348" class="item__post-img">
           </a>
           <p class="item__descr"><a href="/tag.html" class="item__tag">#food</a>{{ post.content|truncate(35) }}</p>
@@ -52,7 +53,7 @@
             </div>
           </div>
           <div class="item__post-bottom">
-            <a href="post.html" class="item__btn-more">Подробнее</a>
+            <a href="/posts/{{post.pk}}" class="item__btn-more">Подробнее</a>
             <button type="button" class="item__bookmark-btn">
               <img src="/static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
             </button>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!--Форма отображения одного поста-->
 <html lang="ru">
 
 <head>
@@ -34,11 +35,13 @@
             </div>
             <span class="item__username" > {{post_match.poster_name|title}} </span>
           </a>
-          <button type="button" class="item__bookmark-btn">
-            <img src="/static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
-          </button>
+          <form action="/bookmarks/add/{{post_match.pk}}" method="post">
+            <button type="submit" class="item__bookmark-btn">
+              <img src="/static/img/bookmark.png" alt="" class="item__bookmark-icon" width="24">
+            </button>
+          </form>
         </div>
-        <a href="" class="item__post-link">
+        <a href="/posts/{{post_match.pk}}" class="item__post-link">
           <img src="{{post_match.pic}}" alt="" width="348" class="item__post-img">
         </a>
         <div class="item__descr">
